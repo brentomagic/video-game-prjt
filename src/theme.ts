@@ -1,21 +1,16 @@
-// theme.ts
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
 // Define your custom theme configuration
 const customThemeConfig = defineConfig({
   theme: {
-    // You can define semantic tokens here for colors that adapt to light/dark mode
     semanticTokens: {
       colors: {
         "chakra-body-text": {
-          // Wrap the string values in a 'value' object
-          value: { _light: "gray.800", _dark: "gray.50" },
+          value: { _light: "gray.800", _dark: "gray.200" }, // Lighter gray for text in dark mode
         },
         "chakra-body-bg": {
-          // Wrap the string values in a 'value' object
-          value: { _light: "white", _dark: "gray.800" },
+          value: { _light: "white", _dark: "gray.700" }, // Changed to gray.700 for a darker grey in dark mode
         },
-        // Example for custom colors that adapt
         primary: {
           default: { value: { _light: "blue.500", _dark: "blue.300" } },
         },
@@ -24,7 +19,6 @@ const customThemeConfig = defineConfig({
         },
       },
     },
-    // Other theme configurations can go here
   },
 });
 
