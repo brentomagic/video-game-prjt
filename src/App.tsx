@@ -2,6 +2,7 @@ import { Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useColorModeValue } from "./components/ui/color-mode"; // Import useColorModeValue
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 function App() {
   // const asideBg = useColorModeValue("gold", "purple.900"); // Example dark mode color
@@ -24,7 +25,7 @@ function App() {
         bg={gridBg}
         display={{ base: "none", lg: "block" }}
       >
-        Aside
+        <GenreList />
       </GridItem>
       <GridItem area="main" bg={gridBg}>
         <GameGrid />
