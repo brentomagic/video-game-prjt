@@ -16,12 +16,17 @@ function App() {
         lg: `"nav nav" "aside main"`,
       }}
       bg={gridBg} // Apply the semantic background color to the entire grid
+      templateColumns={{
+        base: "1fr",
+        lg: "200px 1fr",
+      }}
     >
       <GridItem area="nav">
         <NavBar />
       </GridItem>
       <GridItem
         area="aside"
+        paddingX={2}
         bg={gridBg}
         display={{ base: "none", lg: "block" }}
       >
