@@ -3,11 +3,12 @@ import NavBar from "./components/NavBar";
 import { useColorModeValue } from "./components/ui/color-mode"; // Import useColorModeValue
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { useState } from "react";
+import type { Genre } from "./hooks/useGenres";
 
 function App() {
-  // const asideBg = useColorModeValue("gold", "purple.900"); // Example dark mode color
-  // const mainBg = useColorModeValue("lightgreen", "teal.900"); // Example dark mode color
-  const gridBg = useColorModeValue("chakra-body-bg", "chakra-body-bg"); // Use semantic token for grid background
+  const gridBg = useColorModeValue("chakra-body-bg", "chakra-body-bg");
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 
   return (
     <Grid
@@ -30,10 +31,10 @@ function App() {
         bg={gridBg}
         display={{ base: "none", lg: "block" }}
       >
-        <GenreList />
+        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
       </GridItem>
       <GridItem area="main" bg={gridBg}>
-        <GameGrid />
+        <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
   );
