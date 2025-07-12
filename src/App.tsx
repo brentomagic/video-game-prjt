@@ -16,7 +16,7 @@ function App() {
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
       }}
-      bg={gridBg} // Apply the semantic background color to the entire grid
+      bg={gridBg}
       templateColumns={{
         base: "1fr",
         lg: "200px 1fr",
@@ -31,7 +31,10 @@ function App() {
         bg={gridBg}
         display={{ base: "none", lg: "block" }}
       >
-        <GenreList onSelectGenre={(genre) => setSelectedGenre(genre)} />
+        <GenreList
+          selectedGenre={selectedGenre}
+          onSelectGenre={(genre) => setSelectedGenre(genre)}
+        />
       </GridItem>
       <GridItem area="main" bg={gridBg}>
         <GameGrid selectedGenre={selectedGenre} />
