@@ -5,6 +5,7 @@ import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import { useState } from "react";
 import type { Genre } from "./hooks/useGenres";
+import PlatformSelector from "./components/PlatformSelector";
 
 function App() {
   const gridBg = useColorModeValue("chakra-body-bg", "chakra-body-bg");
@@ -37,6 +38,7 @@ function App() {
         />
       </GridItem>
       <GridItem area="main" bg={gridBg}>
+        <PlatformSelector />
         <GameGrid selectedGenre={selectedGenre} />
       </GridItem>
     </Grid>
