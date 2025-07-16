@@ -3,6 +3,7 @@ import { HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/Logo/logo.webp";
 import { ColorModeButton } from "./ui/color-mode"; // Import ColorModeButton
 import SearchInput from "./SearchInput";
+import type { Props } from "./SearchInput";
 
 // const NavBar = () => {
 //   return (
@@ -18,11 +19,11 @@ import SearchInput from "./SearchInput";
 //   );
 // };
 
-const NavBar = () => {
+const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack justifyContent="space-between" padding="10px">
       <Image src={logo} boxSize="60px" />
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <ColorModeButton />
     </HStack>
   );
