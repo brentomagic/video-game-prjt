@@ -11,7 +11,7 @@ interface Props {
 
 const GameGrid = ({ gameQuery }: Props) => {
   const { data, error, isLoading } = useGames(gameQuery);
-  const numberOfSkeletons = 20; // Define how many skeletons you want
+  const numberOfSkeletons = 30; // Define how many skeletons you want
   const skeletons = Array.from(
     { length: numberOfSkeletons },
     (_, index) => index
